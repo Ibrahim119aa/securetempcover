@@ -69,20 +69,20 @@ export default function TempCoverValidation() {
       <header >
         <div className="w-full lg:block md:block hidden bg-[#F2F2F2]">
           <div className="max-w-4xl  mx-auto ">
-            <div className="pt-[2px] flex  justify-end items-center  text-sm">
+            <div className="pt-[2px]  flex  justify-end mr-4 items-center  text-sm">
               <div className="flex items-center space-x-4 text-blue-600">
                 <Link href="#" className="text-[#234397] text-[12px] hover:underline">
                   Who we cover - eligibility
                 </Link>
-                <span className="text-gray-300">|</span>
+                <span className="text-[#19a4e0]">|</span>
                 <Link href="#" className="text-[#234397] text-[12px] hover:underline">
                   Why choose Tempcover?
                 </Link>
-                <span className="text-gray-300">|</span>
+                <span className="text-[#19a4e0]">|</span>
                 <Link href="#" className="text-[#234397] text-[12px] hover:underline">
                   FAQ's
                 </Link>
-                <nav id="social-navigation" className="social-navigation hidden-sm">
+                <nav id="social-navigation" className="social-navigation  hidden-sm">
                   <a href="https://twitter.com/tempcover" className="twitter" title="Visit tempcover's Twitter feed" target="_blank">Twitter</a>
                   <a href="https://www.facebook.com/tempcover" className="facebook" title="Visit tempcover's Facebook page" target="_blank">Facebook</a>
                   <a href="https://www.youtube.com/user/tempcover" className="youtube" title="Visit tempcover's YouTube channel" target="_blank">YouTube</a>
@@ -99,7 +99,7 @@ export default function TempCoverValidation() {
         <div className="w-full">
           <div className="max-w-4xl lg:px-0 md:px-0 px-4 mx-auto ">
             <div className="flex lg:gap-2 md:gap-2 gap-3 flex-col lg:flex-row md:flex-row lg:py-7 md:py-5 py-4 justify-between">
-              <div className="flex lg:items-center md:items-center">
+              <div className="flex lg:ml-2 lg:items-center md:items-center">
                 <Image
                   src={"/logo1.png"}
                   width={300}
@@ -120,47 +120,47 @@ export default function TempCoverValidation() {
         </div>
       </header>
       {/* Main content */}
-      <main className="max-w-4xl mx-auto px-4 py-12">
-        <h2 className="text-4xl font-bold text-gray-800 mb-4">USER VALIDATION</h2>
+      <main className="max-w-[930px] lg:px-0 md:px-0 px-2 mx-auto py-14">
+        <h2 className="text-[35px]  px-2 font-bold text-[#000] mb-2">USER VALIDATION</h2>
 
-        <div className="text-center mb-8">
-          <p className="text-gray-600 text-sm">
+        <div className=" flex  px-2 mb-4">
+          <p className="text-[#333] justify-center  items-center text-[14px] md:leading-[20px] leading-[30px] lg:leading-[40px]">
             FOR SECURITY PURPOSES, BEFORE ACCESSING YOUR POLICY DOCUMENTS, PLEASE CONFIRM THE FOLLOWING INFORMATION.
           </p>
         </div>
 
-        <div className="flex justify-center">
-          <div className="w-full max-w-4xl">
+        <div className="flex  justify-center">
+          <div className="w-full max-w-[950px]">
             <div className="flex lg:flex-row md:flex-row flex-col  lg:gap-12 md:gap-9 gap-4">
               {/* Left column - Form */}
-              <div className="space-y-3 lg:order-1 md:order-1 order-2 lg:w-[55%]">
-                <div className="flex flex-col  lg:flex-row lg:gap-4 md:gap-3">
-                  <div className="lg:w-[40%]  flex lg:self-center  lg:justify-end  ">
-                    <Label htmlFor="surname" className={`${isSurnameError ? 'text-[#E92A1B]' : 'text-[#234397]'} font-bold text-[0.9rem] `}>
+              <div className="space-y-4 lg:order-1 md:order-1 order-2 lg:w-[55%]">
+                <div className="flex flex-col  lg:flex-row lg:gap-3 md:gap-3">
+                  <div className="lg:w-[40%]  flex -mt-2  lg:justify-end  ">
+                    <Label htmlFor="surname" className={`${isSurnameError ? 'text-[#E92A1B]' : 'text-[#234397]'} font-bold text-[1rem] `}>
                       Policyholder surname
                     </Label>
                   </div>
-                  <div className="lg:w-[60%]">
+                  <div className="lg:w-[58%]">
                     <input name="surname" value={surname} onChange={(e) => setSurname(e.target.value)} id="surname" placeholder="Surname" className="w-full form-control" onBlur={handleSurnameBlur} />
                     {isSurnameError ? <span className="text-sm text-[#E92A1B]">Surname is not supplied</span> : null}
                   </div>
 
                 </div>
 
-                <div className="flex flex-col lg:flex-row  lg:gap-4 md:gap-2 ">
-                  <div className="flex lg:w-[40%]  lg:justify-end  lg:self-center">
-                    <Label htmlFor="dob" className={`${isDOBError ? 'text-[#E92A1B]' : 'text-[#234397]'}  font-bold text-[0.9rem]`}>
+                <div className="flex flex-col lg:flex-row  lg:gap-3 md:gap-2 ">
+                  <div className="flex lg:w-[40%] -mt-2  lg:justify-end  ">
+                    <Label htmlFor="dob" className={`${isDOBError ? 'text-[#E92A1B]' : 'text-[#234397]'}  font-bold text-[1rem]`}>
                       Policyholder date of birth
                     </Label>
                   </div>
-                  <div className="lg:w-[60%] relative">
+                  <div className="lg:w-[58%] relative">
 
 
                     <div className="flex ">
                       <input
                         type="text"
                         placeholder="Date of birth"
-                        className="form-control"
+                        className={`form-control ${isDOBError ? '!border-[#E92A1B] ' : ''} `}
                         value={selectedDateOfBirth ? formatDate(selectedDateOfBirth) : ""}
                         onClick={() => setIsModalOpen(true)}
                         onFocus={() => setIsModalOpen(true)}
@@ -169,11 +169,20 @@ export default function TempCoverValidation() {
                       />
                       <button
                         type="button"
+                        onClick={() => setIsModalOpen(true)}
+                        onFocus={() => setIsModalOpen(true)}
+                        onBlur={handleDOBBlur}
                         aria-label="Select date"
                         className="w-10 h-[44px] border-[1px] border-[#7F8BA0] flex items-center justify-center   bg-white hover:bg-gray-200 calendar-icon-button"
                       >
 
                       </button>
+                      {
+                        isDOBError ? <div className="flex w-[30%] justify-center items-center">
+                          <Image src={"/Cross-removebg-preview.PNG"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
+
+                        </div> : null
+                      }
                     </div>
                     {isDOBError ? <span className="text-sm text-[#E92A1B]">Date of birth is not supplied</span> : null}
 
@@ -186,18 +195,18 @@ export default function TempCoverValidation() {
                     onCancel={handleCancel}
                   />
                 )}
-                <div className="flex flex-col lg:flex-row lg:gap-4 md:gap-3 ">
-                  <div className="flex lg:w-[40%]  lg:justify-end lg:self-center">
-                    <Label htmlFor="startdate" className={`${isPolicyError ? 'text-[#E92A1B]' : 'text-[#234397]'} font-bold text-[0.9rem]`}>
+                <div className="flex flex-col lg:flex-row lg:gap-3 md:gap-3 ">
+                  <div className="flex -mt-2 lg:w-[40%]  lg:justify-end ">
+                    <Label htmlFor="startdate" className={`${isPolicyError ? 'text-[#E92A1B]' : 'text-[#234397]'} font-bold text-[1rem]`}>
                       Policy start date
                     </Label>
                   </div>
-                  <div className="relative lg:w-[60%]">
+                  <div className="relative lg:w-[58%]">
                     <div className="flex ">
                       <input
                         type="text"
                         placeholder="Policy start date"
-                        className="form-control"
+                        className={`form-control ${isPolicyError ? '!border-[#E92A1B] ' : ''}`}
                         value={selectedDateOfPolicy ? formatDate(selectedDateOfPolicy) : ""}
                         onClick={() => setIsPolicyModalOpen(true)}
                         onFocus={() => setIsPolicyModalOpen(true)}
@@ -206,11 +215,21 @@ export default function TempCoverValidation() {
                       />
                       <button
                         type="button"
+                        onClick={() => setIsPolicyModalOpen(true)}
+                        onFocus={() => setIsPolicyModalOpen(true)}
+
+                        onBlur={handlePolicyBlur}
                         aria-label="Select date"
                         className="w-10 h-[44px] border-[1px] border-[#7F8BA0] flex items-center justify-center   bg-white hover:bg-gray-200 calendar-icon-button"
                       >
 
                       </button>
+                      {
+                        isPolicyError ? <div className="flex w-[30%] justify-center items-center">
+                          <Image src={"/Cross-removebg-preview.PNG"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
+
+                        </div> : null
+                      }
                     </div>
                     {isPolicyError ? <span className="text-sm text-[#E92A1B]">Start Date  is not supplied</span> : null}
 
@@ -256,7 +275,7 @@ export default function TempCoverValidation() {
 
               </div>
 
-              <div className="lg:order-2 md:order-2 order-1">
+              <div className="lg:order-2 lg:mx-4 md:order-2 lg:w-[40%] order-1">
                 <div className="border bg-[#F2F2F2] flex gap-2 border-[#333] py-2 px-4">
                   <div className="text-[#333]">Your reference:</div>
                   <div className="font-bold">TCV-MOT-44072540</div>
