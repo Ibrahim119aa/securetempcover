@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image"
 import * as React from "react"
+import { useState,useEffect } from "react"
 import { Info, ChevronUp, ChevronDown } from "lucide-react"
 
 import { getPrevNextValues } from "../app/utils/date-utils"
@@ -63,13 +64,25 @@ export function DatePickerModal({ initialDate, onSelect, onCancel }: DatePickerM
     nextValue: nextMonth,
   } = getPrevNextValues(currentDate, "month")
   const { prevValue: prevYear, currentValue: currentYear, nextValue: nextYear } = getPrevNextValues(currentDate, "year")
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    // Trigger animation on mount
+    setIsOpen(true);
+  }, []);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-      <div className="bg-[#F2F2F2] p-0  shadow-lg w-80 max-w-sm">
+    <div
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-black/55 h-screen transition-opacity duration-300 ease-out ${isOpen ? 'opacity-100' : 'opacity-0'
+        }`}
+    >
+      <div
+        className={`bg-[#F2F2F2] p-0 shadow-lg w-80 max-w-sm transform transition-all duration-300 ease-out ${isOpen ? 'scale-100 opacity-100 ' : 'scale-90 opacity-0'
+          }`}
+      >
         <div className="flex justify-between  p-2">
           <div className="justify-start">
-            <Image src="/icon.png" alt="" width={12} height={10}  className="w-8 h-8 justify-start">
+            <Image src="/icon.png" alt="" width={12} height={10} className="w-8 h-8 justify-start">
             </Image>
           </div>
           <div className="justify-center">
@@ -152,12 +165,12 @@ export function DatePickerModal({ initialDate, onSelect, onCancel }: DatePickerM
           </button>
           <button
             className="mbsc-fr-btn px-4 py-1"
-            onClick={() => {onSelect(currentDate);onCancel();}}
+            onClick={() => { onSelect(currentDate); onCancel(); }}
           >
             DONE
           </button>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   )
 }

@@ -69,9 +69,9 @@ export default function TempCoverValidation() {
       <header >
         <div className="w-full lg:block md:block hidden bg-[#F2F2F2]">
           <div className="max-w-4xl  mx-auto ">
-            <div className="pt-[2px]  flex  justify-end mr-4 items-center  text-sm">
-              <div className="flex items-center space-x-4 text-blue-600">
-                <Link href="#" className="text-[#234397] text-[12px] hover:underline">
+            <div className="pt-[1px]  flex  justify-end mr-[15px] items-center  text-sm">
+              <div className="flex items-center space-x-4 ">
+                <Link href="#" className="text-[#234397] text-[12px] font-normal hover:underline">
                   Who we cover - eligibility
                 </Link>
                 <span className="text-[#19a4e0]">|</span>
@@ -82,7 +82,7 @@ export default function TempCoverValidation() {
                 <Link href="#" className="text-[#234397] text-[12px] hover:underline">
                   FAQ's
                 </Link>
-                <nav id="social-navigation" className="social-navigation  hidden-sm">
+                <nav id="social-navigation" className="social-navigation -ml-1  hidden-sm">
                   <a href="https://twitter.com/tempcover" className="twitter" title="Visit tempcover's Twitter feed" target="_blank">Twitter</a>
                   <a href="https://www.facebook.com/tempcover" className="facebook" title="Visit tempcover's Facebook page" target="_blank">Facebook</a>
                   <a href="https://www.youtube.com/user/tempcover" className="youtube" title="Visit tempcover's YouTube channel" target="_blank">YouTube</a>
@@ -109,9 +109,9 @@ export default function TempCoverValidation() {
 
                 ></Image>
               </div>
-              <div className="text-left lg:text-right md:text-right">
-                <h1 className="text-3xl font-bold text-[#234397] lg:mb-0 md:mb-0 mb-3">SHORT TERM INSURANCE</h1>
-                <p className="text-[#234397] text-[14px]">
+              <div className="flex flex-col lg:mt-[2px]  text-left lg:text-center md:text-right">
+                <h1 className="text-3xl ml-12 font-bold text-[#234397] lg:mb-0 md:mb-0 mb-3">SHORT TERM INSURANCE</h1>
+                <p className=" text-[#234397] -mt-[2px] text-[14px]">
                   We are the UK's largest temporary and short term insurance provider.
                 </p>
               </div>
@@ -120,22 +120,23 @@ export default function TempCoverValidation() {
         </div>
       </header>
       {/* Main content */}
-      <main className="max-w-[930px] lg:px-0 md:px-0 px-2 mx-auto py-14">
-        <h2 className="text-[35px]  px-2 font-bold text-[#000] mb-2">USER VALIDATION</h2>
+      <main className="max-w-[950px] lg:pl-[14px] md:px-0 px-2 mx-auto py-14">
 
-        <div className=" flex  px-2 mb-4">
-          <p className="text-[#333] justify-center  items-center text-[14px] md:leading-[20px] leading-[30px] lg:leading-[40px]">
+        <div className=" flex flex-col px-2 mb-4">
+          <h2 className="text-[35px]   font-bold text-[#000] mb-2">USER VALIDATION</h2>
+
+          <p className="text-[#333] word-spacing-[1rem] justify-center  items-center text-[15px] md:leading-[20px] leading-[30px] lg:leading-[40px]">
             FOR SECURITY PURPOSES, BEFORE ACCESSING YOUR POLICY DOCUMENTS, PLEASE CONFIRM THE FOLLOWING INFORMATION.
           </p>
         </div>
 
         <div className="flex  justify-center">
-          <div className="w-full max-w-[950px]">
+          <div className="w-full max-w-[940px]">
             <div className="flex lg:flex-row md:flex-row flex-col  lg:gap-12 md:gap-9 gap-4">
               {/* Left column - Form */}
               <div className="space-y-4 lg:order-1 md:order-1 order-2 lg:w-[55%]">
                 <div className="flex flex-col  lg:flex-row lg:gap-3 md:gap-3">
-                  <div className="lg:w-[40%]  flex -mt-2  lg:justify-end  ">
+                  <div className="lg:w-[41%]  flex -mt-2  lg:justify-end  ">
                     <Label htmlFor="surname" className={`${isSurnameError ? 'text-[#E92A1B]' : 'text-[#234397]'} font-bold text-[1rem] `}>
                       Policyholder surname
                     </Label>
@@ -148,7 +149,7 @@ export default function TempCoverValidation() {
                 </div>
 
                 <div className="flex flex-col lg:flex-row  lg:gap-3 md:gap-2 ">
-                  <div className="flex lg:w-[40%] -mt-2  lg:justify-end  ">
+                  <div className="flex lg:w-[41%] -mt-2  lg:justify-end  ">
                     <Label htmlFor="dob" className={`${isDOBError ? 'text-[#E92A1B]' : 'text-[#234397]'}  font-bold text-[1rem]`}>
                       Policyholder date of birth
                     </Label>
@@ -196,7 +197,7 @@ export default function TempCoverValidation() {
                   />
                 )}
                 <div className="flex flex-col lg:flex-row lg:gap-3 md:gap-3 ">
-                  <div className="flex -mt-2 lg:w-[40%]  lg:justify-end ">
+                  <div className="flex -mt-2 lg:w-[41%]  lg:justify-end ">
                     <Label htmlFor="startdate" className={`${isPolicyError ? 'text-[#E92A1B]' : 'text-[#234397]'} font-bold text-[1rem]`}>
                       Policy start date
                     </Label>
@@ -276,7 +277,8 @@ export default function TempCoverValidation() {
               </div>
 
               <div className="lg:order-2 lg:mx-4 md:order-2 lg:w-[40%] order-1">
-                <div className="border bg-[#F2F2F2] flex gap-2 border-[#333] py-2 px-4">
+              <div className="">
+                  <div className="border bg-[#F2F2F2] flex gap-2 border-[#333] py-2 px-4">
                   <div className="text-[#333]">Your reference:</div>
                   <div className="font-bold">TCV-MOT-44072540</div>
                 </div>
@@ -284,6 +286,7 @@ export default function TempCoverValidation() {
                   <div className=" text-[#333]  font-bold">Policy:</div>
                   <div className="font-bold text-[#333]">Fully comprehensive cover</div>
                 </div>
+              </div>
               </div>
 
             </div>
