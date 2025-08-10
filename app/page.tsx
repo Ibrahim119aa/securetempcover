@@ -110,7 +110,7 @@ export default function TempCoverValidation() {
                 ></Image>
               </div>
               <div className="flex flex-col lg:mt-[2px]  text-left lg:text-center md:text-right">
-                <h1 className="text-3xl ml-12 font-bold text-[#234397] lg:mb-0 md:mb-0 mb-3">SHORT TERM INSURANCE</h1>
+                <h1 className="text-3xl  font-bold text-[#234397] lg:mb-0 md:mb-0 mb-3">SHORT TERM INSURANCE</h1>
                 <p className=" text-[#234397] -mt-[2px] text-[14px]">
                   We are the UK's largest temporary and short term insurance provider.
                 </p>
@@ -120,7 +120,7 @@ export default function TempCoverValidation() {
         </div>
       </header>
       {/* Main content */}
-      <main className="max-w-[950px] lg:pl-[14px] md:px-0 px-2 mx-auto py-14">
+      <main className="max-w-[950px] lg:pl-[14px] md:px-0 px-2 mx-auto lg:py-14 md:py-10 py-6">
 
         <div className=" flex flex-col px-2 mb-4">
           <h2 className="text-[35px]   font-bold text-[#000] mb-2">USER VALIDATION</h2>
@@ -191,7 +191,7 @@ export default function TempCoverValidation() {
                 </div>
                 {isModalOpen && (
                   <DatePickerModal
-                    initialDate={selectedDateOfBirth || initialDate}
+                    initialDate={selectedDateOfBirth || new Date(2008, 11, 20)}
                     onSelect={handleSelectDateOfBirth}
                     onCancel={handleCancel}
                   />
@@ -241,7 +241,7 @@ export default function TempCoverValidation() {
 
                 {isPolicyModalOpen && (
                   <DatePickerModal
-                    initialDate={selectedDateOfBirth || initialDate}
+                    initialDate={selectedDateOfBirth || new Date(2008, 11, 20)}
                     onSelect={handleSelectDateOfPolicy}
                     onCancel={handlePolicyCancel}
                   />
@@ -277,16 +277,16 @@ export default function TempCoverValidation() {
               </div>
 
               <div className="lg:order-2 lg:mx-4 md:order-2 lg:w-[40%] order-1">
-              <div className="">
+                <div className="">
                   <div className="border bg-[#F2F2F2] flex gap-2 border-[#333] py-2 px-4">
-                  <div className="text-[#333]">Your reference:</div>
-                  <div className="font-bold">TCV-MOT-44072540</div>
+                    <div className="text-[#333]">Your reference:</div>
+                    <div className="font-bold">TCV-MOT-44072540</div>
+                  </div>
+                  <div className="border bg-[#F2F2F2] flex gap-2 border-[#333] py-2 px-4">
+                    <div className=" text-[#333]  font-bold">Policy:</div>
+                    <div className="font-bold text-[#333]">Fully comprehensive cover</div>
+                  </div>
                 </div>
-                <div className="border bg-[#F2F2F2] flex gap-2 border-[#333] py-2 px-4">
-                  <div className=" text-[#333]  font-bold">Policy:</div>
-                  <div className="font-bold text-[#333]">Fully comprehensive cover</div>
-                </div>
-              </div>
               </div>
 
             </div>

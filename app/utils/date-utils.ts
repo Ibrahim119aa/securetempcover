@@ -28,24 +28,30 @@ function getRelativeDate(baseDate: Date, unit: "day" | "month" | "year", offset:
   return newDate
 }
 
-export function getPrevNextValues(currentDate: Date, unit: "day" | "month" | "year") {
-  let prevValue: string | number
-  let nextValue: string | number
-  let currentValue: string | number
+export function getPrevNextValues(date: Date, unit: "day" | "month" | "year") {
+  const prevDate = new Date(date);
+  const nextDate = new Date(date);
 
   if (unit === "day") {
-    prevValue = getRelativeDate(currentDate, "day", -1).getDate().toString().padStart(2, "0")
-    currentValue = currentDate.getDate().toString().padStart(2, "0")
-    nextValue = getRelativeDate(currentDate, "day", 1).getDate().toString().padStart(2, "0")
+    prevDate.setDate(date.getDate() - 1);
+    nextDate.setDate(date.getDate() + 1);
   } else if (unit === "month") {
-    prevValue = monthNames[getRelativeDate(currentDate, "month", -1).getMonth()]
-    currentValue = monthNames[currentDate.getMonth()]
-    nextValue = monthNames[getRelativeDate(currentDate, "month", 1).getMonth()]
-  } else {
-    // year
-    prevValue = getRelativeDate(currentDate, "year", -1).getFullYear()
-    currentValue = currentDate.getFullYear()
-    nextValue = getRelativeDate(currentDate, "year", 1).getFullYear()
+    prevDate.setMonth(date.getMonth() - 1);
+    nextDate.setMonth(date.getMonth() + 1);
+  } else if (unit === "year") {
+    prevDate.setFullYear(date.getFullYear() - 1);
+    nextDate.setFullYear(date.getFullYear() + 1);
   }
-  return { prevValue, currentValue, nextValue }
+
+  const formatter =
+    unit === "month"
+      ? new Intl.DateTimeFormat("en-US", { month: "short" })
+      : new Intl.DateTimeFormat("en-US", { [unit]: "numeric" });
+
+  return {
+    prevValue: formatter.format(prevDate),
+    currentValue: formatter.format(date),
+    nextValue: formatter.format(nextDate),
+  };
 }
+
