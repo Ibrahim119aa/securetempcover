@@ -110,7 +110,7 @@ export default function TempCoverValidation() {
                 ></Image>
               </div>
               <div className="flex flex-col lg:mt-[2px]  text-left lg:text-center md:text-right">
-                <h1 className="text-3xl  font-bold text-[#234397] lg:mb-0 md:mb-0 mb-3">SHORT TERM INSURANCE</h1>
+                <h1 className="lg:text-3xl md:text-2xl text-2xl  font-bold text-[#234397] lg:mb-0 md:mb-0 mb-3">SHORT TERM INSURANCE</h1>
                 <p className=" text-[#234397] -mt-[2px] text-[14px]">
                   We are the UK's largest temporary and short term insurance provider.
                 </p>
@@ -120,7 +120,7 @@ export default function TempCoverValidation() {
         </div>
       </header>
       {/* Main content */}
-      <main className="max-w-[950px] lg:pl-[14px] md:px-0 px-2 mx-auto lg:py-14 md:py-10 py-6">
+      <main className="max-w-[950px] lg:pl-[14px] md:px-0 px-2 mx-auto lg:py-14 md:py-10 py-9">
 
         <div className=" flex flex-col px-2 mb-4">
           <h2 className="text-[35px]   font-bold text-[#000] mb-2">USER VALIDATION</h2>
@@ -130,29 +130,56 @@ export default function TempCoverValidation() {
           </p>
         </div>
 
-        <div className="flex  justify-center">
+        <div className="flex lg:mt-0 md:mt-0 mt-6 justify-center">
           <div className="w-full max-w-[940px]">
             <div className="flex lg:flex-row md:flex-row flex-col  lg:gap-12 md:gap-9 gap-4">
               {/* Left column - Form */}
-              <div className="space-y-4 lg:order-1 md:order-1 order-2 lg:w-[55%]">
+              <div className="space-y-6 lg:order-1 md:order-1 order-2 lg:w-[55%]">
                 <div className="flex flex-col  lg:flex-row lg:gap-3 md:gap-3">
-                  <div className="lg:w-[41%]  flex -mt-2  lg:justify-end  ">
-                    <Label htmlFor="surname" className={`${isSurnameError ? 'text-[#E92A1B]' : 'text-[#234397]'} font-bold text-[1rem] `}>
+                  <div className="lg:w-[41%]  flex    lg:justify-end  ">
+                    <Label htmlFor="surname"
+                      className={`${isSurnameError ? 'text-[#E92A1B]' : surname != "" ? 'text-[#6BA125]' : 'text-[#234397]'} font-bold text-[1rem] `}
+
+                    >
                       Policyholder surname
                     </Label>
                   </div>
                   <div className="lg:w-[58%]">
-                    <input name="surname" value={surname} onChange={(e) => setSurname(e.target.value)} id="surname" placeholder="Surname" className="w-full form-control" onBlur={handleSurnameBlur} />
+                    <div className="flex">
+                      <input name="surname" value={surname} onChange={(e) => setSurname(e.target.value)} id="surname" placeholder="Surname" className="w-full form-control" onBlur={handleSurnameBlur} />
+                      {
+                        isSurnameError ? <div className="flex w-[30%] justify-center items-center">
+                          <Image src={"/Cross-removebg-preview.PNG"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
+
+                        </div> : null
+                      }
+                      {
+                        surname != "" ? <div className="flex w-[30%] justify-center items-center">
+                          <Image src={"/Approve-removebg-preview.PNG"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
+
+                        </div> : null
+                      }
+                    </div>
                     {isSurnameError ? <span className="text-sm text-[#E92A1B]">Surname is not supplied</span> : null}
+
                   </div>
 
                 </div>
 
                 <div className="flex flex-col lg:flex-row  lg:gap-3 md:gap-2 ">
                   <div className="flex lg:w-[41%] -mt-2  lg:justify-end  ">
-                    <Label htmlFor="dob" className={`${isDOBError ? 'text-[#E92A1B]' : 'text-[#234397]'}  font-bold text-[1rem]`}>
+                    <Label
+                      htmlFor="dob"
+                      className={`font-bold text-[1rem] ${isDOBError
+                        ? 'text-[#E92A1B]' // Error state: red
+                        : selectedDateOfBirth != null
+                          ? 'text-[#6BA125]' // Success state: green
+                          : 'text-[#234397]' // Default state: blue
+                        }`}
+                    >
                       Policyholder date of birth
                     </Label>
+
                   </div>
                   <div className="lg:w-[58%] relative">
 
@@ -184,6 +211,12 @@ export default function TempCoverValidation() {
 
                         </div> : null
                       }
+                      {
+                        selectedDateOfBirth != null ? <div className="flex w-[30%] justify-center items-center">
+                          <Image src={"/Approve-removebg-preview.PNG"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
+
+                        </div> : null
+                      }
                     </div>
                     {isDOBError ? <span className="text-sm text-[#E92A1B]">Date of birth is not supplied</span> : null}
 
@@ -198,7 +231,7 @@ export default function TempCoverValidation() {
                 )}
                 <div className="flex flex-col lg:flex-row lg:gap-3 md:gap-3 ">
                   <div className="flex -mt-2 lg:w-[41%]  lg:justify-end ">
-                    <Label htmlFor="startdate" className={`${isPolicyError ? 'text-[#E92A1B]' : 'text-[#234397]'} font-bold text-[1rem]`}>
+                    <Label htmlFor="startdate" className={`${isPolicyError ? 'text-[#E92A1B]' : selectedDateOfPolicy ? 'text-[#6BA125]' : 'text-[#234397]'} font-bold text-[1rem]`}>
                       Policy start date
                     </Label>
                   </div>
@@ -228,6 +261,12 @@ export default function TempCoverValidation() {
                       {
                         isPolicyError ? <div className="flex w-[30%] justify-center items-center">
                           <Image src={"/Cross-removebg-preview.PNG"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
+
+                        </div> : null
+                      }
+                      {
+                        selectedDateOfPolicy != null ? <div className="flex w-[30%] justify-center items-center">
+                          <Image src={"/Approve-removebg-preview.PNG"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
 
                         </div> : null
                       }
