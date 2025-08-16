@@ -31,12 +31,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   ageasLogo: {
-    width: 80,
-    height: 70,
+    width: 130,
+    height: 100,
     position: "absolute",
     top: 0,
-
-    
     right: 0,
   },
   certification: {
@@ -177,10 +175,10 @@ const styles = StyleSheet.create({
   },
   heading:
   {
-    fontWeight:'bold',
-    fontSize:18,
-    marginTop:5,
-    textAlign:'center'
+    fontWeight: 'bold',
+    fontSize: 18,
+    marginTop: 5,
+    textAlign: 'center'
   }
 })
 
@@ -194,7 +192,8 @@ const MotorInsuranceCertificate = () => (
           <Text>Dagenham, Greater London</Text>
           <Text>RM8 2RP</Text>
         </View>
-        <Image src="/logo.png" style={styles.ageasLogo} width={90} height={40} alt="Ageas Logo" />
+
+        <Image src="/logo.png" style={styles.ageasLogo} width={140} height={70} alt="Ageas Logo" />
       </View>
 
       <Text style={{ textAlign: "center", marginBottom: 10, fontSize: 10 }}>

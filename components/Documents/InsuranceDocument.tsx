@@ -35,10 +35,11 @@ const styles = StyleSheet.create({
 
   },
   ageasLogo: {
-    width: 80,
-    height: 80,
-    paddingLeft: 10,
-    paddingTop: 5
+    width: 130,
+    height: 100,
+    position: "absolute",
+    top: 0,
+    right: 0,
   },
   certification: {
     borderWidth: 1,
@@ -421,7 +422,7 @@ const InsuranceDocument = () => (
       <View style={styles.mainCertificateSection}>
         <View style={styles.header}>
           <View>
-            <Image src="/logo.png" style={styles.ageasLogo} width={90} height={40} alt="Ageas Logo" />
+            <Image src="/logo.png" style={styles.ageasLogo} width={140} height={70} alt="Ageas Logo" />
 
           </View>
           <View style={styles.addressBlock}>

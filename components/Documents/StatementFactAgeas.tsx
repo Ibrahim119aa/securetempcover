@@ -35,10 +35,11 @@ const styles = StyleSheet.create({
 
   },
   ageasLogo: {
-    width: 140,
-    height: 120,
-    paddingLeft: 10,
-    paddingTop: 5
+    width: 130,
+    height: 100,
+    position: "absolute",
+    top: 0,
+    right: 0,
   },
   Logo1: {
     width: 180,
@@ -517,7 +518,7 @@ const StatementFactAgeas = () => (
     <Page size="A4" style={styles.page}>
       {/* */}
       <View style={styles.logo}>
-        <Image src="/logo.png" style={styles.ageasLogo} width={140} height={100} alt="Ageas Logo" />
+        <Image src="/logo.png" style={styles.ageasLogo} width={140} height={70} alt="Ageas Logo" />
 
       </View>
       <View style={styles.heading}>

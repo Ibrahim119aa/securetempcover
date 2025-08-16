@@ -58,20 +58,20 @@ export default function PolicyDetail() {
             <header >
                 <div className="w-full lg:block md:block hidden bg-[#F2F2F2]">
                     <div className="max-w-4xl  mx-auto ">
-                        <div className="pt-[2px] flex  justify-end items-center  text-sm">
-                            <div className="flex items-center space-x-4 text-blue-600">
-                                <Link href="#" className="text-[#234397] text-[12px] hover:underline">
+                        <div className="pt-[1px]  flex  justify-end mr-[15px] items-center  text-sm">
+                            <div className="flex items-center space-x-4 ">
+                                <Link href="#" className="text-[#234397] text-[12px] font-normal hover:underline">
                                     Who we cover - eligibility
                                 </Link>
-                                <span className="text-gray-300">|</span>
+                                <span className="text-[#19a4e0]">|</span>
                                 <Link href="#" className="text-[#234397] text-[12px] hover:underline">
                                     Why choose Tempcover?
                                 </Link>
-                                <span className="text-gray-300">|</span>
+                                <span className="text-[#19a4e0]">|</span>
                                 <Link href="#" className="text-[#234397] text-[12px] hover:underline">
                                     FAQ's
                                 </Link>
-                                <nav id="social-navigation" className="social-navigation hidden-sm">
+                                <nav id="social-navigation" className="social-navigation -ml-1  hidden-sm">
                                     <a href="https://twitter.com/tempcover" className="twitter" title="Visit tempcover's Twitter feed" target="_blank">Twitter</a>
                                     <a href="https://www.facebook.com/tempcover" className="facebook" title="Visit tempcover's Facebook page" target="_blank">Facebook</a>
                                     <a href="https://www.youtube.com/user/tempcover" className="youtube" title="Visit tempcover's YouTube channel" target="_blank">YouTube</a>
@@ -86,9 +86,9 @@ export default function PolicyDetail() {
                     </div>
                 </div>
                 <div className="w-full">
-                    <div className="max-w-4xl mx-auto ">
-                        <div className="flex lg:gap-2 md:gap-2 gap-3 flex-col lg:flex-row md:flex-row lg:py-7 md:py-5 py-4 justify-between">
-                            <div className="flex lg:items-center md:items-center">
+                    <div className="max-w-4xl lg:px-0 md:px-0 px-4 mx-auto ">
+                        <div className="flex lg:gap-2 md:gap-2 gap-3 justify-between flex-col lg:flex-row md:flex-row lg:py-7 md:py-5 py-4 ">
+                            <div className="flex lg:ml-2 lg:items-center md:items-center">
                                 <Image
                                     src={"/logo1.png"}
                                     width={300}
@@ -98,9 +98,9 @@ export default function PolicyDetail() {
 
                                 ></Image>
                             </div>
-                            <div className="text-left lg:text-right md:text-right">
-                                <h1 className="text-3xl font-bold text-[#234397] lg:mb-0 md:mb-0 mb-3">SHORT TERM INSURANCE</h1>
-                                <p className="text-[#234397] text-[14px]">
+                            <div className="flex flex-col lg:mt-[2px]  text-left lg:text-center md:text-right">
+                                <h1 className="lg:text-3xl lg:ml-[3rem] md:text-2xl text-2xl  font-bold text-[#234397] lg:mb-0 md:mb-0 mb-3">SHORT TERM INSURANCE</h1>
+                                <p className=" text-[#234397] -mt-[2px] text-[14px]">
                                     We are the UK's largest temporary and short term insurance provider.
                                 </p>
                             </div>
@@ -145,9 +145,9 @@ export default function PolicyDetail() {
                                                 <ClientPDFDownloadLink
                                                     document={document.component}
                                                     fileName={`${document.fileName}.pdf`}
-                                                   label={document.name}
-                                                  >
-                                                    
+                                                    label={document.name}
+                                                >
+
                                                 </ClientPDFDownloadLink>
                                             </li>
                                         ))}

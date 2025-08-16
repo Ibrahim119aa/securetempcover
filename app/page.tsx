@@ -98,7 +98,7 @@ export default function TempCoverValidation() {
         </div>
         <div className="w-full">
           <div className="max-w-4xl lg:px-0 md:px-0 px-4 mx-auto ">
-            <div className="flex lg:gap-2 md:gap-2 gap-3 flex-col lg:flex-row md:flex-row lg:py-7 md:py-5 py-4 justify-between">
+            <div className="flex  md:gap-2 gap-3 justify-between flex-col lg:flex-row md:flex-row lg:py-7 md:py-5 py-4 ">
               <div className="flex lg:ml-2 lg:items-center md:items-center">
                 <Image
                   src={"/logo1.png"}
@@ -109,32 +109,37 @@ export default function TempCoverValidation() {
 
                 ></Image>
               </div>
-              <div className="flex flex-col lg:mt-[2px]  text-left lg:text-center md:text-right">
-                <h1 className="lg:text-3xl md:text-2xl text-2xl  font-bold text-[#234397] lg:mb-0 md:mb-0 mb-3">SHORT TERM INSURANCE</h1>
-                <p className=" text-[#234397] -mt-[2px] text-[14px]">
-                  We are the UK's largest temporary and short term insurance provider.
-                </p>
+              <div className="flex  flex-col lg:mt-[2px]  text-left lg:text-center md:text-right">
+                <div>
+                  <h1 className="lg:text-3xl lg:ml-[3rem] md:text-2xl text-2xl  font-bold text-[#234397] lg:mb-0 md:mb-0 mb-3">SHORT TERM INSURANCE</h1>
+
+                </div>
+                <div className="-ml-2">
+                  <p className=" text-[#234397] -mt-[2px] text-[14px]">
+                    We are the UK's largest temporary and short term insurance provider.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </header>
       {/* Main content */}
-      <main className="max-w-[950px] lg:pl-[14px] md:px-0 px-2 mx-auto lg:py-14 md:py-10 py-9">
+      <main className=" max-w-[1040px] lg:pl-[14px] md:px-0 px-2 mx-auto lg:py-14 md:py-10 py-9">
 
-        <div className=" flex flex-col px-2 mb-4">
+        <div className="lg:ml-12 flex flex-col pl-2 mb-4">
           <h2 className="text-[35px]   font-bold text-[#000] mb-2">USER VALIDATION</h2>
 
-          <p className="text-[#333] word-spacing-[1rem] justify-center  items-center text-[15px] md:leading-[20px] leading-[30px] lg:leading-[40px]">
+          <p className="text-[#333] word-spacing-[1rem]  text-[16px] md:leading-[20px] leading-[30px] lg:leading-[40px]">
             FOR SECURITY PURPOSES, BEFORE ACCESSING YOUR POLICY DOCUMENTS, PLEASE CONFIRM THE FOLLOWING INFORMATION.
           </p>
         </div>
 
         <div className="flex lg:mt-0 md:mt-0 mt-6 justify-center">
-          <div className="w-full max-w-[940px]">
-            <div className="flex lg:flex-row md:flex-row flex-col  lg:gap-12 md:gap-9 gap-4">
+          <div className="w-full max-w-[1000px]">
+            <div className="flex lg:flex-row md:flex-row flex-col  lg:gap-20 md:gap-9 gap-4">
               {/* Left column - Form */}
-              <div className="space-y-6 lg:order-1 md:order-1 order-2 lg:w-[55%]">
+              <div className="lg:ml-[1.4rem] space-y-[0.9rem] lg:order-1 md:order-1 order-2 lg:w-[55%]">
                 <div className="flex flex-col  lg:flex-row lg:gap-3 md:gap-3">
                   <div className="lg:w-[41%]  flex    lg:justify-end  ">
                     <Label htmlFor="surname"
