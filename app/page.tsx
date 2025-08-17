@@ -8,8 +8,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation";
 import { DatePickerModal } from "@/components/DatePickerModal";
 import { useState } from "react";
-import * as jwt_decode from "jwt-decode";
-
+import { jwtDecode } from "jwt-decode";
 export default function TempCoverValidation() {
   const n = useRouter();
 
@@ -65,24 +64,30 @@ export default function TempCoverValidation() {
 
   const isSurnameError = isSurnameTouched && surname === '';
 
+  function formatDate(date: Date) {
+    const day = date.getDate(); // 1 - 31
+    const month = date.getMonth() + 1; // 0-indexed, so add 1
+    const year = date.getFullYear();
+
+    return `${day}/${month}/${year}`;
+  }
   const handleLogin = () => {
-    console.log("this is surname");
-    console.log(surname);
-    console.log("this is date of birth");
-    console.log(selectedDateOfBirth);
-    console.log("this is policy date");
     console.log(selectedDateOfPolicy);
     const params = new URLSearchParams(window.location.search);
     const t = params.get('token');
     if (t) {
-      const decoded = (jwt_decode as any)(t);
+      const decoded = jwtDecode(t);
+      if (decoded?.surname == surname && decoded?.dob == formatDate(selectedDateOfBirth) && decoded?.startDate == formatDate(selectedDateOfPolicy)) {
+        n.push("/PolicyDetails");
+      }
+      else {
+        alert("Invalid Credentail");
+      }
       console.log("Decoded JWT:", decoded);
     } else {
       console.log("No token provided");
     }
-    // const decoded = (jwt_decode as any)(token);
-    // console.log("Decoded JWT:", decoded);
-    // n.push("/PolicyDetails");
+
 
   }
   return (
