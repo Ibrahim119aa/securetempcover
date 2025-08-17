@@ -181,13 +181,13 @@ export default function TempCoverValidation() {
                       <input name="surname" value={surname} onChange={(e) => setSurname(e.target.value)} id="surname" placeholder="Surname" className="w-full form-control" onBlur={handleSurnameBlur} />
                       {
                         isSurnameError ? <div className="flex w-[30%] justify-center items-center">
-                          <Image src={"Cross-removebg-preview.PNG"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
+                          <Image src={"Cross-removebg-preview.png"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
 
                         </div> : null
                       }
                       {
                         surname != "" ? <div className="flex w-[30%] justify-center items-center">
-                          <Image src={"Approve-removebg-preview.PNG"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
+                          <Image src={"Approve-removebg-preview.png"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
 
                         </div> : null
                       }
@@ -239,13 +239,13 @@ export default function TempCoverValidation() {
                       </button>
                       {
                         isDOBError ? <div className="flex w-[30%] justify-center items-center">
-                          <Image src={"Cross-removebg-preview.PNG"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
+                          <Image src={"Cross-removebg-preview.png"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
 
                         </div> : null
                       }
                       {
                         selectedDateOfBirth != null ? <div className="flex w-[30%] justify-center items-center">
-                          <Image src={"Approve-removebg-preview.PNG"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
+                          <Image src={"Approve-removebg-preview.png"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
 
                         </div> : null
                       }
