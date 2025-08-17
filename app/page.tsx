@@ -292,13 +292,13 @@ export default function TempCoverValidation() {
                       </button>
                       {
                         isPolicyError ? <div className="flex w-[30%] justify-center items-center">
-                          <Image src={"Cross-removebg-preview.PNG"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
+                          <Image src={"/Cross-removebg-preview.png"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
 
                         </div> : null
                       }
                       {
                         selectedDateOfPolicy != null ? <div className="flex w-[30%] justify-center items-center">
-                          <Image src={"Approve-removebg-preview.PNG"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
+                          <Image src={"/Approve-removebg-preview.png"} className="w-[40px] h-[40px]" width={50} height={5} alt=""></Image>
 
                         </div> : null
                       }
