@@ -8,6 +8,8 @@ import Link from "next/link"
 import { useRouter } from "next/navigation";
 import { DatePickerModal } from "@/components/DatePickerModal";
 import { useState } from "react";
+import * as jwt_decode from "jwt-decode";
+
 export default function TempCoverValidation() {
   const n = useRouter();
 
@@ -63,6 +65,26 @@ export default function TempCoverValidation() {
 
   const isSurnameError = isSurnameTouched && surname === '';
 
+  const handleLogin = () => {
+    console.log("this is surname");
+    console.log(surname);
+    console.log("this is date of birth");
+    console.log(selectedDateOfBirth);
+    console.log("this is policy date");
+    console.log(selectedDateOfPolicy);
+    const params = new URLSearchParams(window.location.search);
+    const t = params.get('token');
+    if (t) {
+      const decoded = (jwt_decode as any)(t);
+      console.log("Decoded JWT:", decoded);
+    } else {
+      console.log("No token provided");
+    }
+    // const decoded = (jwt_decode as any)(token);
+    // console.log("Decoded JWT:", decoded);
+    // n.push("/PolicyDetails");
+
+  }
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -312,8 +334,8 @@ export default function TempCoverValidation() {
 
                   </div>
                   <div className="lg:w-[60%] flex lg:justify-end">
-                    <button onClick={() => { n.push("/PolicyDetails") }} className="bg-[#6BA125]  cursor-pointer text-white px-4 py-2 font-bold">SUBMIT</button>
-
+                    <button onClick={handleLogin} className="bg-[#6BA125]  cursor-pointer text-white px-4 py-2 font-bold">SUBMIT</button>
+                    {/* () => { n.push("/PolicyDetails") }} */}
                   </div>
                 </div>
 
