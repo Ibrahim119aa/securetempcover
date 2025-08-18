@@ -2,7 +2,7 @@
 
 import { Label } from "@/components/ui/label"
 import Image from "next/image"
-import React from "react";
+import React, { useEffect } from "react";
 import { formatDate } from "./utils/date-utils";
 import Link from "next/link"
 import { useRouter } from "next/navigation";
@@ -269,6 +269,7 @@ export default function TempCoverValidation() {
                 </div>
                 {isModalOpen && (
                   <DatePickerModal
+                    heading="Date Of Birth"
                     initialDate={selectedDateOfBirth || new Date(2008, 11, 20)}
                     onSelect={handleSelectDateOfBirth}
                     onCancel={handleCancel}
@@ -325,6 +326,7 @@ export default function TempCoverValidation() {
 
                 {isPolicyModalOpen && (
                   <DatePickerModal
+                    heading="Policy Date"
                     initialDate={selectedDateOfPolicy || new Date(2008, 11, 20)}
                     onSelect={handleSelectDateOfPolicy}
                     onCancel={handlePolicyCancel}
