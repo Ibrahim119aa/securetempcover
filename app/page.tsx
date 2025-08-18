@@ -12,6 +12,7 @@ import { jwtDecode } from "jwt-decode";
 export default function TempCoverValidation() {
   const n = useRouter();
 
+  const [isInvalidCredentail, setIsInvalidCredentail] = useState(false);
   const [isModalOpen, setIsModalOpen] = React.useState(false)
   const [isPolicyModalOpen, setIsPolicyModalOpen] = React.useState(false)
 
@@ -81,7 +82,7 @@ export default function TempCoverValidation() {
         n.push("/PolicyDetails");
       }
       else {
-        alert("Invalid Credentail");
+        setIsInvalidCredentail(true);
       }
       console.log("Decoded JWT:", decoded);
     } else {
@@ -160,6 +161,18 @@ export default function TempCoverValidation() {
           <p className="text-[#333] word-spacing-[1rem]  text-[16px] md:leading-[20px] leading-[30px] lg:leading-[40px]">
             FOR SECURITY PURPOSES, BEFORE ACCESSING YOUR POLICY DOCUMENTS, PLEASE CONFIRM THE FOLLOWING INFORMATION.
           </p>
+          {
+            isInvalidCredentail ?
+              (
+                <div className="lg:ml-[10rem] lg:mr-[11.7rem] lg:mt-4">
+                  <div className="alert alert-danger text-center">
+                    The values entered do not match the stored credentials
+                  </div>
+                </div>
+              ) : null
+          }
+
+
         </div>
 
         <div className="flex lg:mt-0 md:mt-0 mt-6 justify-center">
@@ -339,7 +352,7 @@ export default function TempCoverValidation() {
 
                   </div>
                   <div className="lg:w-[60%] flex lg:justify-end">
-                    <button onClick={handleLogin} className="bg-[#6BA125] !py-[6px] !px-[12px] btn text-white">SUBMIT</button>
+                    <button onClick={handleLogin} className="bg-[#6BA125] !py-[6px] !px-[12px] btn text-white cursor-pointer">SUBMIT</button>
 
                     {/* () => { n.push("/PolicyDetails") }} */}
                   </div>
