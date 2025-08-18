@@ -312,7 +312,7 @@ export default function TempCoverValidation() {
 
                 {isPolicyModalOpen && (
                   <DatePickerModal
-                    initialDate={selectedDateOfBirth || new Date(2008, 11, 20)}
+                    initialDate={selectedDateOfPolicy || new Date(2008, 11, 20)}
                     onSelect={handleSelectDateOfPolicy}
                     onCancel={handlePolicyCancel}
                   />
@@ -339,7 +339,8 @@ export default function TempCoverValidation() {
 
                   </div>
                   <div className="lg:w-[60%] flex lg:justify-end">
-                    <button onClick={handleLogin} className="bg-[#6BA125]  cursor-pointer text-white px-4 py-2 font-bold">SUBMIT</button>
+                    <button onClick={handleLogin} className="bg-[#6BA125] !py-[6px] !px-[12px] btn text-white">SUBMIT</button>
+
                     {/* () => { n.push("/PolicyDetails") }} */}
                   </div>
                 </div>
