@@ -116,7 +116,7 @@ export default function PolicyDetail() {
 
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         <div className="lg:order-1 md:order-1 order-2">
                             <div className="bg-[#19a4e0] text-white py-[10px] px-[15px] ">
                                 <h4 className="text-[18px]">Documents you need now</h4>
@@ -156,7 +156,7 @@ export default function PolicyDetail() {
                                 </div>
                             </div>
 
-                            <p className="lg:block md:block hidden text-[#555555] mt-4 text-sm">
+                            <p className="lg:block md:block hidden text-[#333] mt-7 text-[16px]">
                                 Unable to view your documentation? Download Adobe reader for free{" "}
                                 <a href="#" className="text-[#19a4e0] hover:underline">
                                     here
@@ -164,7 +164,7 @@ export default function PolicyDetail() {
                                 .
                             </p>
                             <div className="mt-8">
-                                <button className="btn btn-secondary px-3 py-2">HOME</button>
+                                <button className="btn btn-secondary px-3 py-1">HOME</button>
                             </div>
                         </div>
 
